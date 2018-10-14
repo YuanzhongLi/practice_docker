@@ -1,0 +1,13 @@
+CUI(Character User Interface)
+terminalでの操作
+
+GUI(Graphical User Interface)
+画面での操作
+
+オンプレミス(on-premises)
+自社でデータセンターを保有し、システム構築から運用までを行う
+
+パブリッククラウド
+今のコインオタクのような、amazon ec2を使う
+
+KVS（Key-Value Store）
