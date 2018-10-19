@@ -1,0 +1,30 @@
+-v <host_path>:<container_path>	ホストの <host_path> を <container_path> にマウントしてコンテナを起動
+-v <container_path>	Data Volume を作成して <container_path> にマウントしてコンテナを起動
+--volumes-from <container> <container> で指定したコンテナの Data Volume を全部マウントしてコンテナを起動
+
+up コンテナの生成
+ps コンテナの一覧
+logs
+run コンテナの実行
+start コンテナの起動
+stop コンテナの停止
+restart
+pause
+unpause コンテナの再開
+port 公開ポート番号の表示
+config 構成の確認
+kill 実行中のコンテナの強制停止
+rm コンテナの削除
+down リソースの削除
+
+特定のコンテナの操作
+docker-compose stop webserver
+
+複数コンテナのバックグラウンド起動
+docker-compose up -d
+
+コンテナでのコマンド実行
+docker-compose run server_a /bin/bash
+
+公開ポートの確認
+docker-compose port webserver 80

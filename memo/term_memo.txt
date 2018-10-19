@@ -11,3 +11,9 @@ GUI(Graphical User Interface)
 今のコインオタクのような、amazon ec2を使う
 
 KVS（Key-Value Store）
+
+可用性（アベイラビリティ）
+システムが継続して稼働できる能力
+
+拡張性（スケーラビリティ）
+複数のコンピュータをクラスタ化し、処理を分散する

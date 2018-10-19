@@ -1,0 +1,108 @@
+nginx image をpull
+docker pull nginx
+
+nginxでwebserverという名前のdockerコンテナを起動
+docker container run --name webserver -d -p 80:80 nginx
+
+nginxの状態を確認
+docker container ps
+
+webserverを詳しく見る
+docker container stats webserver
+
+webserverコンテナを止める
+docker stop webserver
+
+webserverコンテナを起動
+docker start webserver
+
+centos 7 imageの取得
+docker image pull centos:7
+
+取得したimage一覧
+docker image ls
+
+DCT機能の有効化/無効化
+export DOCKER_CONTENT_TRUST=1 / export DOCKER_CONTENT_TRUST=0
+
+イメージの詳細表示
+docker image inspect centos:7
+
+ユーザ名ryuan,コンテナ名webserver,タグversion1.0をnginxにつける
+docker image tag nginx ryuan/webserver:1.0
+
+人気のあるimageの検索
+docker search --filter=start=1000 nginx
+
+image 削除
+docker image rm
+docker image rm --force
+
+使用していないimageを削除
+docker image prune -a
+
+コンテナ起動
+docker container run -it(コンソールに結果を出すオプション) --name "test1" centos /bin/cal
+
+コンテナ終了
+exit
+
+バックグラウンド指定
+docker container run -d centos /bin/ping localhost
+
+nginx80とlocalhost:8080をマッピング
+docker container run -d -p 8080:80 nginx
+
+DNSサーバ指定
+docker container run -d --dns 192.168.1.1 nginx
+
+ネットワーク一覧表示
+docker network ls
+
+ブリッジネットワークの作成
+docker network create --driver=bridge web-network
+
+ネットワークへの接続
+docker network connect web-network webfront(コンテナ名)
+
+ネットワークからの切断
+docker network disconnect web-network webfront
+
+コンテナへの接続
+docker container attach sample(コンテナ名)
+
+Ctrl + C で接続したコンテナごと終了、Ctrl + Q でコンテナは起動したままプロセスのみを終了させる
+
+コンテナでのbash実行
+docker container exec -it webserver /bin/echo "hello world"
+
+プロセス確認
+docker container top webserver
+
+ポート確認
+docker container port webserver
+
+名前変更
+docker container rename new old
+
+コンテナからホストへのコピー
+docker container cp webserver:/etc/nginx/nginx.conf /tmp/nginx.conf
+ls -la /tmp/nginx.conf
+
+ホストからコンテナへのコピー
+docker container cp ./test.txt webserber:/tmp/test.txt
+
+コンテナ変更箇所確認
+docker container diff test(コンテナ名)
+
+コンテナからイメージ作成
+docker container commit -a "ryuan"(作者) webserver ryuan/webfront:1.0
+
+tarファイルに出力
+docker container export > latest.tar
+
+tarファイルの詳細確認
+tar -tf latest.tar
+
+docker buile の実行例
+docker build -t sample:1.0 /home/docker/sample
