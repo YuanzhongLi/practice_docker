@@ -12,7 +12,7 @@ services:
 
   wordpress:
     container_name: wordpress
-    image: wordpress:4.9-php7.2-fpm-alpine
+    build: ./wordpress
     depends_on:
       - db
     ports:
@@ -21,7 +21,7 @@ services:
       - db
     volumes:
       - ./wordpress/wp-config.php:/var/www/html/wp-config.php
-       - ./wordpress/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./wordpress/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
   db:
     container_name: db
