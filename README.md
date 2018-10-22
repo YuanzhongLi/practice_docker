@@ -1,0 +1,9 @@
+1.wordpress_nginx_basement  
+wordpressをnignxからなるベース的なものを作成
+ここでwordpressの初期状態から設定したりする。
+
+2.wordpress_nginx_JP_initial_created
+1の状態からwordpressの設定が完了し、設定が保存されるまでの状態を作る
+ここのコードをcloneしてdocker compose upすると設定が全て反映されているwordpressがlocalhost:8080に立ち上がる
+
+3.

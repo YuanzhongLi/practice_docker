@@ -12,6 +12,7 @@ services:
 
   wordpress:
     container_name: wordpress
+    # README.md でwordpressを日本語化のフェイズで作り変える
     image: wordpress:4.9-php7.2-fpm-alpine
     depends_on:
       - db
@@ -30,7 +31,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: root
       MYSQL_PASSWORD: password
 
 volumes:
